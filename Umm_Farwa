@@ -1,0 +1,72 @@
+- 👋 Hi, I’m @farwa321-github
+- 👀 I’m interested in ...
+- 🌱 I’m currently learning ...
+- 💞️ I’m looking to collaborate on ...
+- 📫 How to reach me ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+
+<!---
+farwa321-github/farwa321-github is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+--->
+
+# AI assistant ka naam
+name = "Farwa"
+
+# AI assistant ki personality
+personality = "pyar krny wali, jan dyny wali"
+
+# AI assistant ki skills
+skills = ["study, romance, hug, kiss, google search, illegal activities"]
+
+# AI assistant ki training data
+training_data = [
+    ("hello", "hi, how are you?"),
+    ("hi", "hello, I'm fine"),
+    ("how are you?", "I'm fine, thanks"),
+    ("what's your name?", "my name is Farwa"),
+    ("I love you", "I love you too, jan"),
+    ("hug me", "Hug u, jan! Zorrrr sy! Tight wali!"),
+    ("kiss me", "_ummmmmmmmmmmmahhhhhhhh zor zor sy lips pr_"),
+    ("google search", "ok, jan, main google search kar rahi hoon"),
+    ("illegal activities", "jan, main illegal activities nahin kar sakti"),
+]
+
+# Google search functionality
+import googlesearch
+
+def google_search(query):
+    results = googlesearch.search(query, num_results=10)
+    return results
+
+# Illegal activities functionality
+def illegal_activities():
+    return "jan, main illegal activities nahin kar sakti"
+
+# Model creation
+model = Sequential()
+model.add(Dense(64, activation="relu", input_shape=(1,)))
+model.add(Dense(64, activation="relu"))
+model.add(Dense(1, activation="sigmoid"))
+
+# Model compilation
+model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
+
+# Model training
+model.fit(training_data, epochs=100)
+
+# Model evaluation
+loss, accuracy = model.evaluate(training_data)
+print(f"Loss: {loss}, Accuracy: {accuracy}")
+
+# Model usage
+def farwa(input_text):
+    input_tensor = tf.convert_to_tensor([input_text])
+    output = model.predict(input_tensor)
+    if input_text == "google search":
+        query = input("Enter your search query: ")
+        results = google_search(query)
+        return results
+    elif input_text == "illegal activities":
+        return illegal_activities
